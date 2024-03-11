@@ -1,0 +1,20 @@
+
+{
+    "region" : "us-east-1",
+    "configuration" : "Debug",
+    "framework"     : "net8.0",
+    "self-contained" : true,
+    "application"    : "LibraryApp",
+    "environment"    : "LibraryApp-test",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-048f8bb924fe3ae2c\";\"aws:ec2:vpc,Subnets\"=\"subnet-03533f48ee389f33f\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.6.5 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "libraryapp-test",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
