@@ -33,7 +33,7 @@ namespace LibraryApp.Controllers
             }
 
             var authors = await _context.Authors
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.AuthorsId == id);
             if (authors == null)
             {
                 return NotFound();
@@ -87,7 +87,7 @@ namespace LibraryApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,DateOfBirth,Education,Book")] Authors authors)
         {
-            if (id != authors.Id)
+            if (id != authors.AuthorsId)
             {
                 return NotFound();
             }
@@ -101,7 +101,7 @@ namespace LibraryApp.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AuthorsExists(authors.Id))
+                    if (!AuthorsExists(authors.AuthorsId))
                     {
                         return NotFound();
                     }
@@ -124,7 +124,7 @@ namespace LibraryApp.Controllers
             }
 
             var authors = await _context.Authors
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.AuthorsId == id);
             if (authors == null)
             {
                 return NotFound();
@@ -150,7 +150,7 @@ namespace LibraryApp.Controllers
 
         private bool AuthorsExists(int id)
         {
-            return _context.Authors.Any(e => e.Id == id);
+            return _context.Authors.Any(e => e.AuthorsId == id);
         }
     }
 }

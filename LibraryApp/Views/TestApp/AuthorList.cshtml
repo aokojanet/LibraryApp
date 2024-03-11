@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Authors>
+
+@{
+	Layout = "_LayoutUsers";
+}
+
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-10">
+
+		</div>
+		<div class="col-md-2">
+			<a href="#" class="btn btn-outline-primary" style="margin-top:10px"> Add New Author</a>
+		</div>
+	
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h3>Author List</h3>
+
+			<table class="table table-striped">
+
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name of Author</th>
+						<th>Date of Birth</th>
+						<th>Education</th>
+						<th>View Books</th>
+					</tr>
+				</thead>
+
+				<tbody>
+
+					@foreach (var item in Model)
+					{
+						<tr>
+							<td></td>
+							<td>@item.Name</td>
+							<td>@item.DateOfBirth</td>
+							<td>@item.Education</td>
+							<td><a href="#" class="btn btn-primary">View Books</a></td>
+						</tr>
+					}
+
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+
+
+</div>
+
+
