@@ -8,9 +8,13 @@ namespace LibraryApp.Models
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
-			modelBuilder.Entity<Books>()
-				.HasMany(b => b.Authors)
-				.WithMany(b => b.Books);
+
+			modelBuilder.Entity<Authors>()
+				.HasMany( b => b.Books)
+				.WithOne(b => b.Authors)
+				.HasForeignKey(b => b.Id);
+				
+			   
 				
 		}
 
